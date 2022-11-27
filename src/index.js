@@ -6,3 +6,4 @@ const root = createRoot(container); // createRoot(container!) if you use TypeScr
 root.render(<App tab="home" />);
 
 //ReactDOM.render(<App />, document.querySelector(".pagetoda"));
+//test
