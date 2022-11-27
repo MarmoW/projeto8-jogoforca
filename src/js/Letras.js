@@ -1,44 +1,66 @@
 import React from "react";
-import {palavrajogo} from "./Jogo.js";
+import {palavrajogo, palavrajogo2} from "./Jogo.js"
+
 const Alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-let erros = 0;
 
-export {GerarLetras, erros} 
 
-function GerarLetras(props) {
-    const [markletra, setMarkletra] = React.useState("letras");  
+//chosenword1={chosenword} setchosenword1={setChosenword} markletra1={markletra} setmarkletra1={setMarkletra}
+
+export default function GerarLetras(props) {
     const desmarcada = "letras";
     const marcada = "letras marcadas";    
+    let arr = [];
+    
 
     function MarcarLetras(letraescolhida) {        
-        if (markletra === desmarcada){
-        console.log("marcou");        
-        setMarkletra(marcada);
-        console.log(palavrajogo);
-        console.log(letraescolhida);
+        
+        if (props.markletra1 === desmarcada){
+        
         if(palavrajogo.includes(letraescolhida)){
-            console.log("tem a letra");
             
-
+            for(let i = 0; i < palavrajogo.length; i++){
+                if(palavrajogo[i] === letraescolhida){
+                    arr = [...arr, letraescolhida];
+                                 
+        
+                }
+                else {
+                    arr= [...arr, props.chosenword1[i]];
+                    
+                   }
+                   
+                }        
+                props.setchosenword1(arr);
+                               
         }
+        
         else {
-            erros ++;
-            console.log(erros);
-            if(erros > 5){
-                console.log("Derrota!")
-                errouFeio();
+            props.seterros1(props.erros1 + 1);
+            if(props.erros1 > 4){
+                props.setmarkletra1(marcada);
+                props.setchosenword1(palavrajogo);
+                props.setwordcolor1("palavraescolhida vermelho");
+                
+            
             }
+        
         }
-        }
-        else {
-            
+        CheckWin();
+    }
+    
+    }
+    function CheckWin() {
+        if(String(arr) === String(palavrajogo)){
+            props.setmarkletra1(marcada);
+            props.setwordcolor1("palavraescolhida verde");
         }
     }
-
+    
+    
     return (
-        <div className={markletra} onClick={() => MarcarLetras(props.l1.toLowerCase())}>{props.l1}</div>
+        <button className={props.markletra1 }  onClick={() => MarcarLetras(props.l1.toLowerCase())} data-test="letter">{props.l1}</button>
     );
+
 }
-
-
 //conjunto de botões com as letras
+//disabled={arrclicadas.includes(letrack) ? true : false}

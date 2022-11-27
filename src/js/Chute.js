@@ -6,13 +6,11 @@ import React from "react";
 import {palavrajogo, palavrajogo2} from "./Jogo.js";
 let arr = [];
 
-export default function BotaoChute() {
-    //const [textchute, setTextchute] = React.useState("");
+export default function BotaoChute(props) {
     let chute = "";
     function guardarText(event) {
         console.log(event.target.value);
         chute = event.target.value;
-        //setTextchute(event.target.value);     
         }
     function Conferir() {
         console.log("até aqui?");
@@ -20,15 +18,23 @@ export default function BotaoChute() {
         console.log(chute);
         if(chute === palavrajogo2.toString()){
             console.log("ganhou");
-            
+            props.setmarkletra1("letras marcadas");
+            props.setchosenword1(palavrajogo);
+            props.setwordcolor1("palavraescolhida verde");
         }
-
+        else{
+            console.log("derrota");
+            props.setmarkletra1("letras marcadas");
+            props.setchosenword1(palavrajogo);
+            props.seterros1(6);
+            props.setwordcolor1("palavraescolhida vermelho");
+        }
     }
      return (
     <div className="advinharpalavra">
         <p className="textochute">Já sei a palavra!</p>
-        <input type="text" className="inputchute" placeholder="Tens o que é necessário pra chutar?" onChange={guardarText} />
-        <div className="botaochute" onClick={Conferir}>Chutar!</div>
+        <input type="text" className="inputchute" placeholder="Tens o que é necessário pra chutar?" onChange={guardarText} data-test="guess-input"/>
+        <div className="botaochute" onClick={Conferir} data-test="guess-button">Chutar!</div>
     </div>
     )
 }
