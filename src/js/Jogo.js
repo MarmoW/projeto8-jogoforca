@@ -1,8 +1,7 @@
 //imagem da forca, botão de iniciar, palavra do jogo
 import React from "react";
-import {useState} from "react";
 import palavras from "./Palavras";
-import {erros} from "./Letras";
+
 
 export {Jogo, palavrajogo, palavrajogo2};
 let palavrajogo = "";

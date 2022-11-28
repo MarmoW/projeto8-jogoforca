@@ -16,9 +16,8 @@ export default function GerarLetras(props) {
     function MarcarLetras(letraescolhida) {        
         
         if (props.markletra1 === desmarcada){
-        props.setprevlet1([...props.prevlet1, letraescolhida]);
         props.setletante1(letraescolhida);
-        console.log(props.prevlet1);
+        
 
         if(palavrajogo.includes(letraescolhida)){
             
@@ -64,7 +63,7 @@ export default function GerarLetras(props) {
     
     
     return (
-        <button className={props.prevlet1.includes(props.letante1) ? "letras marcadas" : props.markletra1} onClick={() => MarcarLetras(props.l1.toLowerCase())} data-test="letter">{props.l1}</button>
+        <button className={rops.markletra1} onClick={() => MarcarLetras(props.l1.toLowerCase())} data-test="letter">{props.l1}</button>
     );
 
 }

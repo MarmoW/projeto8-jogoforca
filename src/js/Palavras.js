@@ -25,5 +25,5 @@ const palavras = [
 ]
 
 
-
 export default palavras;
+
