@@ -16,6 +16,7 @@ export default function BotaoChute(props) {
         console.log("até aqui?");
         console.log(palavrajogo2);
         console.log(chute);
+        
         if(chute === palavrajogo2.toString()){
             console.log("ganhou");
             props.setmarkletra1("letras marcadas");

@@ -11,11 +11,15 @@ export default function GerarLetras(props) {
     const marcada = "letras marcadas";    
     let arr = [];
     
+    
 
     function MarcarLetras(letraescolhida) {        
         
         if (props.markletra1 === desmarcada){
-        
+        props.setprevlet1([...props.prevlet1, letraescolhida]);
+        props.setletante1(letraescolhida);
+        console.log(props.prevlet1);
+
         if(palavrajogo.includes(letraescolhida)){
             
             for(let i = 0; i < palavrajogo.length; i++){
@@ -41,6 +45,7 @@ export default function GerarLetras(props) {
                 props.setchosenword1(palavrajogo);
                 props.setwordcolor1("palavraescolhida vermelho");
                 
+                
             
             }
         
@@ -53,12 +58,13 @@ export default function GerarLetras(props) {
         if(String(arr) === String(palavrajogo)){
             props.setmarkletra1(marcada);
             props.setwordcolor1("palavraescolhida verde");
+            
         }
     }
     
     
     return (
-        <button className={props.markletra1 }  onClick={() => MarcarLetras(props.l1.toLowerCase())} data-test="letter">{props.l1}</button>
+        <button className={props.prevlet1.includes(props.letante1) ? "letras marcadas" : props.markletra1} onClick={() => MarcarLetras(props.l1.toLowerCase())} data-test="letter">{props.l1}</button>
     );
 
 }
