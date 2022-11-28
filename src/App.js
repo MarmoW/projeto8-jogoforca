@@ -14,12 +14,14 @@ export default function App() {
     const [erros, setErros] = React.useState(0);
     const [wordcolor, setWordcolor] = React.useState("palavraescolhida");
     const [startdisabled, setStartdisabled] = React.useState(true);
-   
+    const [prevletras, setPrevletras] = React.useState(['']);
+ 
+    
     return(
     <>
-     <Jogo startdisabled1={startdisabled} setstartdisabled1={setStartdisabled} chosenword1={chosenword} setchosenword1={setChosenword} markletra1={markletra} setmarkletra1={setMarkletra} erros1={erros} seterros1={setErros} wordcolor1={wordcolor} setwordcolor1={setWordcolor}/>
+     <Jogo setprevletras1={setPrevletras} startdisabled1={startdisabled} setstartdisabled1={setStartdisabled} chosenword1={chosenword} setchosenword1={setChosenword} markletra1={markletra} setmarkletra1={setMarkletra} erros1={erros} seterros1={setErros} wordcolor1={wordcolor} setwordcolor1={setWordcolor}/>
      <div className="caixadasletras">
-        {Alfabeto.map((letra) => <GerarLetras key={letra} startdisabled1={startdisabled} setstartdisabled1={setStartdisabled} l1={letra.toUpperCase()} chosenword1={chosenword} setchosenword1={setChosenword} markletra1={markletra} setmarkletra1={setMarkletra} erros1={erros} seterros1={setErros} wordcolor1={wordcolor} setwordcolor1={setWordcolor}/>)}
+        {Alfabeto.map((letra) => <GerarLetras key={letra} prevletras1={prevletras} setprevletras1={setPrevletras} startdisabled1={startdisabled} setstartdisabled1={setStartdisabled} l1={letra.toUpperCase()} chosenword1={chosenword} setchosenword1={setChosenword} markletra1={markletra} setmarkletra1={setMarkletra} erros1={erros} seterros1={setErros} wordcolor1={wordcolor} setwordcolor1={setWordcolor}/>)}
      </div>
      <BotaoChute startdisabled1={startdisabled} setstartdisabled1={setStartdisabled} chosenword1={chosenword} setchosenword1={setChosenword} markletra1={markletra} setmarkletra1={setMarkletra} erros1={erros} seterros1={setErros} wordcolor1={wordcolor} setwordcolor1={setWordcolor}/>
     </>
