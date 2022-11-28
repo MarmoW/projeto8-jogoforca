@@ -63,7 +63,7 @@ export default function GerarLetras(props) {
     
     
     return (
-        <button className={rops.markletra1} onClick={() => MarcarLetras(props.l1.toLowerCase())} data-test="letter">{props.l1}</button>
+        <button className={props.markletra1} onClick={() => MarcarLetras(props.l1.toLowerCase())} data-test="letter">{props.l1}</button>
     );
 
 }

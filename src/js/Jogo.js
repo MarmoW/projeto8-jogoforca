@@ -25,6 +25,7 @@ function Jogo(props) {
         //if(props.wordcolor1 ==="palavraescolhida verde" || props.wordcolor1 ==="palavraescolhida verde"){ }
         props.setchosenword1("");
         props.seterros1(0);
+        props.setstartdisabled1(false);
         iniciarJogo2();
     }
     function iniciarJogo2() {

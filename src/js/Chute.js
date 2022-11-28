@@ -34,9 +34,10 @@ export default function BotaoChute(props) {
      return (
     <div className="advinharpalavra">
         <p className="textochute">Já sei a palavra!</p>
-        <input type="text" className="inputchute" placeholder="Tens o que é necessário pra chutar?" onChange={guardarText} data-test="guess-input"/>
-        <div className="botaochute" onClick={Conferir} data-test="guess-button">Chutar!</div>
+        <input type="text"  disabled={props.startdisabled1} className="inputchute" placeholder="Tens o que é necessário pra chutar?" onChange={guardarText} data-test="guess-input"/>
+        <button className="botaochute" disabled={props.startdisabled1} onClick={Conferir} data-test="guess-button">Chutar!</button>
     </div>
     )
 }
 
+//disabled={props.startdisabled1}

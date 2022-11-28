@@ -102,6 +102,7 @@ body {
     line-height: 19px;
     line-height: 100%;
     box-shadow:inset 0px 0px 0px 2px #3C76A1;
+    border: none;
 }
 .caixadasletras {
     display: flex;
