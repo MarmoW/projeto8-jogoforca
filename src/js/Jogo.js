@@ -51,7 +51,7 @@ function Jogo(props) {
         <div><img src={imgsforca[props.erros1]} className="forca" data-test="game-image"/></div>
         <div className="botaoepalavra">
             <div className="escolherpalavra" onClick={iniciarJogo} data-test="choose-word">Escolher Palavra</div>
-            <div className={props.wordcolor1} data-test="word" data-answer={palavrajogo}>{props.chosenword1}</div>
+            <div className={props.wordcolor1} data-test="word" data-answer={palavrajogo2}>{props.chosenword1}</div>
         </div>
     </div>
     )
