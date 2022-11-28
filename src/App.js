@@ -8,7 +8,6 @@ const Alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m
 
 //return ({Alfabeto.map((letras) => <div className="letras">{letras}</div>});
 export default function App() {
-    const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     const [chosenword, setChosenword] = React.useState("");
     const [markletra, setMarkletra] = React.useState("letras marcadas");  
     const [erros, setErros] = React.useState(0);
@@ -29,5 +28,3 @@ export default function App() {
 
 }
 
-//chamará os demais componentes
-// props.setmarkletra1("")

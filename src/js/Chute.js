@@ -1,36 +1,33 @@
-//input e botão de chute
-//import Jogo from "Jogo.js";
-
-
 import React from "react";
 import {palavrajogo, palavrajogo2} from "./Jogo.js";
-let arr = [];
+
 
 export default function BotaoChute(props) {
     let chute = "";
     function guardarText(event) {
-        console.log(event.target.value);
+      
         chute = event.target.value;
+
         }
     function Conferir() {
-        console.log("até aqui?");
-        console.log(palavrajogo2);
-        console.log(chute);
+        
         
         if(chute === palavrajogo2.toString()){
-            console.log("ganhou");
+           
             props.setmarkletra1("letras marcadas");
             props.setchosenword1(palavrajogo);
             props.setwordcolor1("palavraescolhida verde");
             props.setstartdisabled1(true);
+
         }
         else{
-            console.log("derrota");
+            
             props.setmarkletra1("letras marcadas");
             props.setchosenword1(palavrajogo);
             props.seterros1(6);
             props.setwordcolor1("palavraescolhida vermelho");
             props.setstartdisabled1(true);
+
         }
     }
      return (
@@ -42,4 +39,3 @@ export default function BotaoChute(props) {
     )
 }
 
-//disabled={props.startdisabled1}

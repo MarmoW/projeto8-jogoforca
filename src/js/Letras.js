@@ -3,25 +3,17 @@ import {palavrajogo, palavrajogo2} from "./Jogo.js"
 
 const Alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-
-
-        
 export default function GerarLetras(props) {
     const desmarcada = "letras";
     const marcada = "letras marcadas";    
     let arr = [];
-    
-    
-    
-
+     
     function MarcarLetras(letraescolhida) {        
     
         props.setprevletras1([...props.prevletras1 , props.l1]);
 
         if (props.markletra1 === desmarcada){
-            console.log(props.l1.toLowerCase());
-            console.log(props.prevletras1);
-
+            
         if(palavrajogo.includes(letraescolhida)){
             
             for(let i = 0; i < palavrajogo.length; i++){
@@ -72,6 +64,4 @@ export default function GerarLetras(props) {
     );
 
 }
-//chosenword1={chosenword} setchosenword1={setChosenword} markletra1={markletra} setmarkletra1={setMarkletra}
-//conjunto de botões com as letras
-//disabled={arrclicadas.includes(letrack) ? true : false}
+
