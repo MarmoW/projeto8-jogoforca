@@ -22,6 +22,7 @@ export default function BotaoChute(props) {
             props.setmarkletra1("letras marcadas");
             props.setchosenword1(palavrajogo);
             props.setwordcolor1("palavraescolhida verde");
+            props.setstartdisabled1(true);
         }
         else{
             console.log("derrota");
@@ -29,6 +30,7 @@ export default function BotaoChute(props) {
             props.setchosenword1(palavrajogo);
             props.seterros1(6);
             props.setwordcolor1("palavraescolhida vermelho");
+            props.setstartdisabled1(true);
         }
     }
      return (

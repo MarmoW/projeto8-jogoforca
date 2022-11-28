@@ -16,7 +16,6 @@ export default function GerarLetras(props) {
     function MarcarLetras(letraescolhida) {        
         
         if (props.markletra1 === desmarcada){
-        props.setletante1(letraescolhida);
         
 
         if(palavrajogo.includes(letraescolhida)){
@@ -43,6 +42,7 @@ export default function GerarLetras(props) {
                 props.setmarkletra1(marcada);
                 props.setchosenword1(palavrajogo);
                 props.setwordcolor1("palavraescolhida vermelho");
+                props.setstartdisabled1(true);
                 
                 
             
@@ -57,6 +57,7 @@ export default function GerarLetras(props) {
         if(String(arr) === String(palavrajogo)){
             props.setmarkletra1(marcada);
             props.setwordcolor1("palavraescolhida verde");
+            props.setstartdisabled1(true);
             
         }
     }
